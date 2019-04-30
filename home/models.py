@@ -9,6 +9,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from djmoney.models.fields import MoneyField
 from djmoney.models.validators import MinMoneyValidator
 
+
 class Restaurant(Model):
     name = CharField(max_length=64)
 
@@ -19,6 +20,7 @@ class Restaurant(Model):
 
     def __str__(self):
         return self.name
+
 
 class Dish(Model):
     name = CharField(max_length=64)
@@ -40,17 +42,21 @@ class Dish(Model):
     def __str__(self):
         return self.name
 
+
 class CustomUser(AbstractUser):
     def __str__(self):
         return self.email
+
 
 class Category(Model):
     name = CharField(max_length=64)
 
     description = TextField(max_length=256)
 
+
 class Allergen(Model):
     name = CharField(max_length=64)
+
 
 # Many-to-many relationship tables
 
@@ -68,13 +74,16 @@ class Rating(Model):
     def __str__(self):
         return self.rating
 
+
 class LikedRestaurants(Model):
     user = ForeignKey(CustomUser, on_delete=CASCADE)
     restaurant = ForeignKey(Restaurant, on_delete=CASCADE)
 
+
 class RestaurantCategory(Model):
     restaurant = ForeignKey(Restaurant, on_delete=CASCADE)
     category = ForeignKey(Category, on_delete=CASCADE)
+
 
 class DishAllergen(Model):
     dish = ForeignKey(Restaurant, on_delete=CASCADE)
