@@ -16,9 +16,26 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.views.generic.base import TemplateView
+from rest_framework.routers import DefaultRouter
+
+from home.views import RestaurantViewSet, DishViewSet, CustomUserViewSet, CategoryViewSet, AllergenViewSet, \
+    RatingViewSet, LikedRestaurantsViewSet, RestaurantCategoryViewSet, DishAllergenViewSet
+
+router = DefaultRouter()
+router.register('restaurants', RestaurantViewSet)
+router.register('dishes', DishViewSet)
+router.register('users', CustomUserViewSet)
+router.register('categories', CategoryViewSet)
+router.register('allergens', AllergenViewSet)
+router.register('ratings', RatingViewSet)
+router.register('likedrestaurants', LikedRestaurantsViewSet)
+router.register('restaurantcategories', RestaurantCategoryViewSet)
+router.register('dishallergens', DishAllergenViewSet)
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    # path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('api/', include(router.urls)),
+    # path('api/', include('rest_framework.urls'), name='rest_framework'),
     path('admin/', admin.site.urls),
     path('users/', include('home.urls')),
     path('users', include('django.contrib.auth.urls')),
