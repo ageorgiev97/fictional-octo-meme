@@ -1,0 +1,14 @@
+<button mat-icon-button [matMenuTriggerFor]="menu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button *ngIf="!auth.isAuthenticated" mat-menu-item routerLink="/login">
+    <span>Login</span>
+  </button>
+  <button *ngIf="!auth.isAuthenticated" mat-menu-item routerLink="/register">
+    <span>Register</span>
+  </button>
+  <button *ngIf="auth.isAuthenticated" mat-menu-item routerLink="/logout">
+    <span>Logout</span>
+  </button>
+</mat-menu>

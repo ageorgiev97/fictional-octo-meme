@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { 
   MatButtonModule,
+  MatMenuModule,
   MatTabsModule,
   MatButtonToggleModule,
   MatInputModule, 
@@ -26,6 +27,8 @@ import { AuthInterceptor } from './services/auth-service/auth.interceptor'
 import { ApiService } from './services/api-service/api.service'
 
 import { AppComponent } from './app.component';
+import { FooterComponent } from './footer/footer.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes = [
   { path: '', component: LoginComponent },
@@ -37,7 +40,9 @@ const routes = [
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +64,8 @@ const routes = [
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule
   ],
   providers: [AuthService, ApiService, {
     provide: HTTP_INTERCEPTORS,

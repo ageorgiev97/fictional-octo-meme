@@ -1,0 +1,11 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+.footerPosition {
+    bottom: 0;
+    position: sticky;
+    width: 100%;
+}
