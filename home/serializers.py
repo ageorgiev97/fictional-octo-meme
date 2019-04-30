@@ -1,18 +1,60 @@
-from rest_framework.serializers import ModelSerializer
-from home.models import Restaurant, Vote, Dish
+from rest_framework.serializers import HyperlinkedModelSerializer
+from rest_framework.viewsets import ModelViewSet
 
-class RestaurantSerializer(ModelSerializer):
+from home.models import Restaurant, Dish, CustomUser, Category, Allergen, Rating, LikedRestaurants, RestaurantCategory, \
+    DishAllergen
+
+
+class RestaurantSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Restaurant
         fields = '__all__'
 
-class VoteSerializer(ModelSerializer):
-    class Meta:
-        model = Vote
-        fields = '__all__'
 
-
-class DishSerializer(ModelSerializer):
+class DishSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Dish
         fields = '__all__'
+
+
+class CustomUserSerializer(HyperlinkedModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = '__all__'
+
+
+class CategorySerializer(HyperlinkedModelSerializer):
+    class Meta:
+        model = Category
+        fields = '__all__'
+
+
+class AllergenSerializer(HyperlinkedModelSerializer):
+    class Meta:
+        model = Allergen
+        fields = '__all__'
+
+
+class RatingSerializer(HyperlinkedModelSerializer):
+    class Meta:
+        model = Rating
+        fields = '__all__'
+
+
+class LikedRestaurantsSerializer(HyperlinkedModelSerializer):
+    class Meta:
+        model = LikedRestaurants
+        fields = '__all__'
+
+
+class RestaurantCategorySerializer(HyperlinkedModelSerializer):
+    class Meta:
+        model = RestaurantCategory
+        fields = '__all__'
+
+
+class DishAllergenSerializer(HyperlinkedModelSerializer):
+    class Meta:
+        model = DishAllergen
+        fields = '__all__'
+
