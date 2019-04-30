@@ -18,17 +18,18 @@ from django.urls import include, path
 from django.views.generic.base import TemplateView
 from rest_framework.routers import DefaultRouter
 
-from home.views import RestaurantViewSet, DishViewSet, CustomUserViewSet, CategoryViewSet, AllergenViewSet, \
-    RatingViewSet, LikedRestaurantsViewSet, RestaurantCategoryViewSet, DishAllergenViewSet
+from home.views import LocationViewSet, RestaurantViewSet, DishViewSet, CustomUserViewSet, CategoryViewSet, AllergenViewSet, \
+    RatingViewSet, FavouriteRestaurantsViewSet, RestaurantCategoryViewSet, DishAllergenViewSet
 
 router = DefaultRouter()
+router.register('locations', LocationViewSet)
 router.register('restaurants', RestaurantViewSet)
 router.register('dishes', DishViewSet)
 router.register('users', CustomUserViewSet)
 router.register('categories', CategoryViewSet)
 router.register('allergens', AllergenViewSet)
 router.register('ratings', RatingViewSet)
-router.register('likedrestaurants', LikedRestaurantsViewSet)
+router.register('likedrestaurants', FavouriteRestaurantsViewSet)
 router.register('restaurantcategories', RestaurantCategoryViewSet)
 router.register('dishallergens', DishAllergenViewSet)
 
