@@ -1,5 +1,5 @@
 from django.db.models import Model
-from django.db.models import CharField, TextField, IntegerField, DecimalField, TimeField, ForeignKey
+from django.db.models import CharField, TextField, IntegerField, DecimalField, TimeField, ForeignKey, ImageField
 from django.db.models import CASCADE
 
 from django.contrib.auth.models import AbstractUser
@@ -10,6 +10,11 @@ from djmoney.models.fields import MoneyField
 from djmoney.models.validators import MinMoneyValidator
 
 
+class Location(Model):
+    latitude = DecimalField(max_digits=6, decimal_places=3)
+    longitude = DecimalField(max_digits=6, decimal_places=3)
+
+
 class Restaurant(Model):
     name = CharField(max_length=64)
 
@@ -17,6 +22,10 @@ class Restaurant(Model):
 
     lunch_start = TimeField('Lunch Start')
     lunch_end = TimeField('Lunch End')
+
+    image = ImageField(null=True, blank=True)
+
+    location = ForeignKey(Location, on_delete=CASCADE)
 
     def __str__(self):
         return self.name
@@ -44,6 +53,8 @@ class Dish(Model):
 
 
 class CustomUser(AbstractUser):
+    image = ImageField(null=True, blank=True)
+
     def __str__(self):
         return self.email
 
@@ -75,7 +86,7 @@ class Rating(Model):
         return self.rating
 
 
-class LikedRestaurants(Model):
+class FavouriteRestaurants(Model):
     user = ForeignKey(CustomUser, on_delete=CASCADE)
     restaurant = ForeignKey(Restaurant, on_delete=CASCADE)
 
