@@ -2,12 +2,17 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from rest_framework.viewsets import ModelViewSet
 
-from home.models import Restaurant, Dish, CustomUser, Category, Allergen, Rating, LikedRestaurants, RestaurantCategory, \
+from home.models import Location, Restaurant, Dish, CustomUser, Category, Allergen, Rating, FavouriteRestaurants, RestaurantCategory, \
     DishAllergen
-from home.serializers import RestaurantSerializer, DishSerializer, CustomUserSerializer, CategorySerializer, \
-    AllergenSerializer, RatingSerializer, LikedRestaurantsSerializer, RestaurantCategorySerializer, \
+from home.serializers import LocationSerializer, RestaurantSerializer, DishSerializer, CustomUserSerializer, CategorySerializer, \
+    AllergenSerializer, RatingSerializer, FavouriteRestaurantsSerializer, RestaurantCategorySerializer, \
     DishAllergenSerializer
 from .forms import CustomUserCreationForm
+
+
+class LocationViewSet(ModelViewSet):
+    queryset = Location.objects.all()
+    serializer_class = LocationSerializer
 
 
 class RestaurantViewSet(ModelViewSet):
@@ -40,9 +45,9 @@ class RatingViewSet(ModelViewSet):
     serializer_class = RatingSerializer
 
 
-class LikedRestaurantsViewSet(ModelViewSet):
-    queryset = LikedRestaurants.objects.all()
-    serializer_class = LikedRestaurantsSerializer
+class FavouriteRestaurantsViewSet(ModelViewSet):
+    queryset = FavouriteRestaurants.objects.all()
+    serializer_class = FavouriteRestaurantsSerializer
 
 
 class RestaurantCategoryViewSet(ModelViewSet):
