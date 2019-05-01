@@ -15,14 +15,14 @@ export class AuthService {
 
     register(credentials) {
         console.log(credentials)
-        this.http.post<any>(`<here goes django endpoint for registration>`, credentials).subscribe(res => {
+        this.http.post<any>(`http://localhost:8000/api/users/`, credentials).subscribe(res => {
             console.log(res);
             this.authenticate(res);
         })
     }
 
     login(credentials) {
-        this.http.post<any>(`<here goes django endpoint for login>`, credentials).subscribe(res => {
+        this.http.post<any>(`http://localhost:8000/api-auth/login/`, credentials).subscribe(res => {
             console.log(res);
             this.authenticate(res);
         })

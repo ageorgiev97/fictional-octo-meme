@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<img width="100%" height="360" src="../../../../assets/images/pic.png">
+<mat-tab-group >
+  <mat-tab label="Edit profile">
+    <form [formGroup]="form" (ngSubmit)="updateProfile()">
+      <div class="main-div">
+        <div class="example-container">
+          <mat-form-field>
+            <input matInput placeholder="Restaurant name" formControlName="name">
+          </mat-form-field>
+          <mat-form-field>
+            <textarea matInput placeholder="Discription" formControlName="description"></textarea>
+          </mat-form-field>
+          <mat-form-field>
+            <textarea matInput placeholder="Lunch start" formControlName="lunch_start"></textarea>
+          </mat-form-field>
+          <mat-form-field>
+            <textarea matInput placeholder="Lunch end" formControlName="lunch_end"></textarea>
+          </mat-form-field>
+          <button mat-stroked-button [disabled]="!form.valid">Update profile</button>
+        </div>
+      </div>
+    </form>
+  </mat-tab>
+  <mat-tab label="Edit menu">
+    <form [formGroup]="form" (ngSubmit)="addDish(dish)">
+    <div class="main-div">
+      <div class="example-container">
+        <mat-form-field>
+          <input matInput placeholder="Dish name">
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput placeholder="Calories"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput placeholder="Grams"></textarea>
+        </mat-form-field>
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Price">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Currency">
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <button mat-stroked-button>Add dish</button>
+      </div>
+    </div>
+  </form>
+    <!-- The table with all dishes for given restaurant -->
+    <table>
+      <tr>
+        <th>Dish name</th>
+        <th>Calories</th>
+        <th>Grams</th>
+        <th>Price</th>
+        <th>Currency</th>
+        <th>Delete dish</th>
+      </tr>
+      <tr *ngFor="let dish of dishes">
+        <td>{{dish.name}}</td>
+        <td>{{dish.calories}}</td>
+        <td>{{dish.cost}}</td>
+        <td>{{dish.cost_currency}}</td>
+        <td>{{dish.grams}}</td>
+        <td><button class="btn" (click)="deleteDish(dish.id)"><i class="fa fa-trash"></i></button></td>
+      </tr>
+    </table>
+    <!--  -->
+  </mat-tab>
+</mat-tab-group>

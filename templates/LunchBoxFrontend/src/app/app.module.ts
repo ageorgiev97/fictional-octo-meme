@@ -32,12 +32,14 @@ import { MenuComponent } from './menu/menu.component';
 import { RestaurantlistComponent } from './restaurantlist/restaurantlist.component';
 import { RestaurantcardComponent } from './restaurantcard/restaurantcard.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
 
 const routes = [
   { path: '', component: HomepageComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'restaurantlist', component: RestaurantlistComponent },
+  { path: 'editprofile', component: EditprofileComponent }
 ]
 
 @NgModule({
@@ -47,9 +49,10 @@ const routes = [
     LoginComponent,
     FooterComponent,
     MenuComponent,
-    HomepageComponent
+    HomepageComponent,
     RestaurantlistComponent,
-    RestaurantcardComponent
+    RestaurantcardComponent,
+    EditprofileComponent
   ],
   imports: [
     BrowserModule,
