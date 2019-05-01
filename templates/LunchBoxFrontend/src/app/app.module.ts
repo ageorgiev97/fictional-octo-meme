@@ -29,9 +29,10 @@ import { ApiService } from './services/api-service/api.service'
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 const routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: HomepageComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent }
 ]
@@ -42,7 +43,8 @@ const routes = [
     RegisterComponent,
     LoginComponent,
     FooterComponent,
-    MenuComponent
+    MenuComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
