@@ -8,7 +8,7 @@ from home.models import Location, Restaurant, Dish, CustomUser, Category, Allerg
 class LocationSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Location
-        field = '__all__'
+        fields = '__all__'
 
 
 class RestaurantSerializer(HyperlinkedModelSerializer):
