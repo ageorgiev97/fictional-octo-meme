@@ -23,7 +23,7 @@ class Restaurant(Model):
     lunch_start = TimeField('Lunch Start')
     lunch_end = TimeField('Lunch End')
 
-    image = ImageField(null=True, blank=True)
+    image = TextField(max_length=1024)
 
     location = ForeignKey(Location, on_delete=CASCADE)
 
