@@ -14,6 +14,9 @@ class Location(Model):
     latitude = DecimalField(max_digits=6, decimal_places=3)
     longitude = DecimalField(max_digits=6, decimal_places=3)
 
+    def __str__(self):
+        return f'{self.latitude, self.longitude}'
+
 
 class Restaurant(Model):
     name = CharField(max_length=64)
