@@ -7,4 +7,8 @@ export class ApiService {
     constructor(private http: HttpClient) {
 
     }
+
+    getAllRestaurants() {
+        return this.http.get('https://localhost:8000/api/restaurants');
+    }
 }

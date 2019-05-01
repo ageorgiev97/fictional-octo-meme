@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../services/api-service/api.service';
 
 @Component({
   selector: 'app-restaurantlist',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantlistComponent implements OnInit {
 
-  restaurants = [1, 2, 3, 4, 5, 6]
+  restaurants
 
-  constructor() { }
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.api.getAllRestaurants().subscribe(result => {
+      this.restaurants = result;
+    })
   }
 
 }

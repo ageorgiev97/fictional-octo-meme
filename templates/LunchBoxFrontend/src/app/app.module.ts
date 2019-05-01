@@ -35,7 +35,8 @@ import { RestaurantcardComponent } from './restaurantcard/restaurantcard.compone
 const routes = [
   { path: '', component: RestaurantlistComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'restaurantlist', component: RestaurantlistComponent },
 ]
 
 @NgModule({

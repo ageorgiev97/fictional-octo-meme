@@ -12,7 +12,7 @@
 /* The grid: Four equal columns that floats next to each other */
 .column {
     float: left;
-    width: 75%;
+    width: 67%;
     padding-left: 25%;
   }
 
