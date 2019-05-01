@@ -1,7 +1,8 @@
 from rest_framework.serializers import HyperlinkedModelSerializer
 from rest_framework.viewsets import ModelViewSet
 
-from home.models import Location, Restaurant, Dish, CustomUser, Category, Allergen, Rating, FavouriteRestaurants, RestaurantCategory, \
+from home.models import Location, Restaurant, Dish, CustomUser, Category, Allergen, Rating, FavouriteRestaurants, \
+    RestaurantCategory, \
     DishAllergen
 
 
@@ -26,7 +27,7 @@ class DishSerializer(HyperlinkedModelSerializer):
 class CustomUserSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = CustomUser
-        fields = '__all__'
+        fields = ('username', 'email', 'password',)
 
 
 class CategorySerializer(HyperlinkedModelSerializer):
@@ -63,4 +64,3 @@ class DishAllergenSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = DishAllergen
         fields = '__all__'
-
