@@ -28,7 +28,7 @@ class Restaurant(Model):
 
     image = ImageField(null=True, blank=True)
 
-    location = ForeignKey(Location, on_delete=CASCADE)
+    location = ForeignKey(Location, on_delete=CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.name
