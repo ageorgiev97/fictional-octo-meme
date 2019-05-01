@@ -31,9 +31,10 @@ import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { RestaurantlistComponent } from './restaurantlist/restaurantlist.component';
 import { RestaurantcardComponent } from './restaurantcard/restaurantcard.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 const routes = [
-  { path: '', component: RestaurantlistComponent },
+  { path: '', component: HomepageComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'restaurantlist', component: RestaurantlistComponent },
@@ -46,6 +47,7 @@ const routes = [
     LoginComponent,
     FooterComponent,
     MenuComponent,
+    HomepageComponent
     RestaurantlistComponent,
     RestaurantcardComponent
   ],

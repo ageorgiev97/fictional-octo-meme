@@ -4,4 +4,28 @@ footer {
     color: white;
     text-align: center;
     height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo {
+    padding-left: 20px;
+}
+
+.section-heading {
+    font-size: 14px;
+    color: grey;
+}
+
+.section-link {
+    font-size: 13px;
+    color: white;
+}
+
+.footer-link {
+    font-size: 13px;
+    color: grey;
+}
+
+.social-icon {
+    width: 40px;
 }

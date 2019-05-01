@@ -2,3 +2,4 @@ django
 django-rest-framework
 django-money
 django-extensions
+pydotplus
