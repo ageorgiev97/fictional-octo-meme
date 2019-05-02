@@ -5,7 +5,7 @@
     width: 98%;
     font-weight: bold;
   }
-  
+
   .example-container > * {
     width: 100%;
   }
@@ -20,7 +20,7 @@
   }
 
   .transparent {
-    background-color: rgba(255, 255, 255, .4);
+    background-color: rgba(255, 255, 255, .8);
     width: 42%;
     margin-left: auto;
     margin-right: auto;
@@ -42,4 +42,14 @@
     width: 42%;
     margin: 10px auto;
   }
-  
+
+  .mat-card-title {
+    color: rgb(63,80,181);
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .register-link, .mat-card-title {
+    font-family: 'Montserrat', sans-serif;
+  }
+

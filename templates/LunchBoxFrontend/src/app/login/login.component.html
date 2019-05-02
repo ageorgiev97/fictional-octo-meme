@@ -1,5 +1,6 @@
 <div class="full-height backgroundImage main-div">
     <mat-card class="transparent center" layout-align="center center">
+        <mat-card-title class="text-center">Login</mat-card-title>
         <form [formGroup]="form" (ngSubmit)="auth.login(form.value)">
             <div class="example-container">
                 <mat-form-field>
@@ -11,5 +12,6 @@
                 <button mat-raised-button color="primary" [disabled]="!form.valid">Login</button>
             </div>
         </form>
+        <p class="text-center mt-4 register-link">Don't have an account yet? <a href="/register">Register</a> now!</p>
     </mat-card>
 </div>
